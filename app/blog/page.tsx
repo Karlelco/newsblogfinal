@@ -13,7 +13,7 @@ import Image from "next/image";
 import { getNewsWorld } from "../api/newWorld";
 import PostDrawer from "../[id]/page";
 
-export default function Page() {
+export default function BlogPage() {
   const [worldNews, setWorldNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
