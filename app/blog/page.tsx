@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { getNewsKenya } from "../api/newkenya";
 
-import { Upload } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -12,10 +10,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import Link from "next/link";
 import { getNewsWorld } from "../api/newWorld";
-import { useRouter } from "next/navigation";
-import { PostDrawer } from "../[id]/page";
+import PostDrawer from "../[id]/page";
 
 export default function Page() {
   const [worldNews, setWorldNews] = useState([]);
