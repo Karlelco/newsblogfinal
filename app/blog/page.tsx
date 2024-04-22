@@ -12,11 +12,16 @@ import {
 import Image from "next/image";
 import { getNewsWorld } from "../api/newWorld";
 import PostDrawer from "../[id]/page";
+import { PrismaClient } from "@prisma/client";
+
+
 
 export default function BlogPage() {
   const [worldNews, setWorldNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
+      const prisma = new PrismaClient();
 
   const fetchWorldNews = async () => {
     try {
@@ -35,6 +40,19 @@ export default function BlogPage() {
   useEffect(() => {
     fetchWorldNews();
   }, []);
+
+  async function test() {
+      const user = await prisma.user.create({
+        data: {
+          email: "chegecolins@gmail.com",
+          name: "colins chege",
+          posts: {
+            create: { title: "Hello World" },
+          },
+        },
+      });
+    }
+    test();
 
  return (
       <div className="container mx-auto p-4">
